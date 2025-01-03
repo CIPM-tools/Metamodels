@@ -4,5 +4,9 @@ xtend-gen/
 generated/
 bin/
 test-bin
-
+target
+org.xtext.lua/plugin.xml
+.settings
+.classpath
+.project
 *.xml_gen

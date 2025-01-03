@@ -5,6 +5,6 @@
 		<package
 			uri = "http://www.xtext.org/lua/Lua"
 			class = "org.xtext.lua.lua.LuaPackage"
-			genModel = "model/generated/Lua.genmodel" />
+			genModel = "src/main/generated/Lua.genmodel" />
 	</extension>
 </plugin>
