@@ -22,6 +22,7 @@
     <modules>
         <module>org.xtext.lua</module>
 		<module>tools.cipm.models.instrumentation</module>
+        <module>metamodels.p2</module>
     </modules>
     
     <build>

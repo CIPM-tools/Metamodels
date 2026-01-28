@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+    <artifactId>metamodels.p2</artifactId>
+    <packaging>pom</packaging>
+    <name>CIPM's Metamodels P2 Site</name>
+	<description>This package builds a P2 update site for the metamodels of CIPM.</description>
+
+    <parent>
+        <groupId>tools.cipm</groupId>
+        <artifactId>metamodels.parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.reficio</groupId>
+                <artifactId>p2-maven-plugin</artifactId>
+                <version>2.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <configuration>
+                            <categoryFileURL>${project.basedir}/src/category.xml</categoryFileURL>
+                            <artifacts>
+                                <!-- specify your depencies here -->
+                                <!-- groupId:artifactId:version -->
+                                <artifact>
+                                    <id>tools.cipm:tools.cipm.models.instrumentation:1.0.0-SNAPSHOT</id>
+                                    <transitive>false</transitive>
+                                </artifact>
+                                <artifact>
+                                    <id>tools.cipm:org.xtext.lua:0.1.0-SNAPSHOT</id>
+                                    <transitive>false</transitive>
+                                </artifact>
+                            </artifacts>
+                            <featureDefinitions>
+                                <feature>
+                                    <id>tools.cipm.metamodels.feature</id>
+                                    <version>${project.version}</version>
+                                    <label>CIPM</label>
+                                    <providerName>MCSE</providerName>
+                                    <description>Metamodels for CIPM.</description>
+                                    <copyright>
+Copyright (c) 2026 Modelling for Continuous Software Engineering (MCSE) group, Institute of Information Security and Dependability (KASTEL), Karlsruhe Institute of Technology (KIT).
+                                    </copyright>
+                                    <license>
+All rights reserved. This program and the accompanying materials are made partly available under the terms of the Eclipse Public License v1.0 (http://www.eclipse.org/legal/epl-v10.html) and partly available under the terms of the Eclipse Public License v2.0 (https://www.eclipse.org/legal/epl-2.0/).
+                                    </license>
+                                    <generateSourceFeature>false</generateSourceFeature>
+                                    <artifacts>
+                                        <artifact>
+                                            <id>tools.cipm:tools.cipm.models.instrumentation:1.0.0-SNAPSHOT</id>
+                                            <transitive>false</transitive>
+                                            <source>false</source>
+                                        </artifact>
+                                        <artifact>
+                                            <id>tools.cipm:org.xtext.lua:0.1.0-SNAPSHOT</id>
+                                            <transitive>false</transitive>
+                                            <source>false</source>
+                                        </artifact>
+                                    </artifacts>                           
+                                </feature>
+                            </featureDefinitions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/assembly/src.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- The dependencies are to make sure this project is build after all relevant artifacts are created. -->
+    <dependencies>
+        <dependency>
+            <groupId>tools.cipm</groupId>
+            <artifactId>tools.cipm.models.instrumentation</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>tools.cipm</groupId>
+            <artifactId>org.xtext.lua</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>
