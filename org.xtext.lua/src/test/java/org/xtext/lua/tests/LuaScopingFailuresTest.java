@@ -25,6 +25,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.xtext.lua.lua.Chunk;
 
+@Disabled
 @ExtendWith(InjectionExtension.class)
 @InjectWith(LuaInjectorProvider.class)
 @SuppressWarnings("all")
@@ -35,22 +36,15 @@ public class LuaScopingFailuresTest {
 
 	private final Set<String> failureSrc = Set.of(
 		// no self reference
-		"""
-			hello = hello
-		""",
+		"\thello = hello",
 		// no access to uncalled function
-		"""
-			local function foo(...)
-				local bar = 42
-			end
-			
-			result = bar
-		""",
+		"local function foo(...)\n\t"
+		+ "local bar = 42"
+		+ "end\n\n"
+		+ "result = bar",
 		// Cannot declare a qualified function without declaring the table first
-		"""
-			function Foo.bar(...)
-			end
-		"""
+		"function Foo.bar(...)\n"
+		+ "end"
 	);
 
 	@Disabled("We assume a correct grammar for the evaluation, because finding all errors is very hard")

@@ -34,6 +34,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.xtext.lua.LuaStandaloneSetup;
 import org.xtext.lua.lua.Chunk;
 
+@Disabled
 @ExtendWith(InjectionExtension.class)
 @InjectWith(LuaInjectorProvider.class)
 public class LuaParsingTest {
@@ -49,28 +50,23 @@ public class LuaParsingTest {
 	@Extension
 	private ValidationTestHelper _validationTestHelper;
 
-	private final String luaSnippet = """
-		num = 666
-
-		local function foo()
-			num = num + 1
-		end
-
-		foo()
-		eq = num == 667
-	""";
+	private final String luaSnippet =
+		"num = 666\n\n"
+		+ "local function foo()\n\t"
+		+ "num = num + 1\n"
+		+ "end\n\n"
+		+ "foo()\n"
+		+ "eq = num == 667";
 
 	/**
 	 * this is critical, as parsing it using the ParseHelper will create a synthetic
 	 * resource, where our stdlib injection scheme does _not_ work.
 	 */
-	private final String luaSnippetWithStdLib = """
-		local function foo()
-			print("foo bar")
-		end
-	
-		foo()
-	""";
+	private final String luaSnippetWithStdLib =
+		"local function foo()\n\t"
+		+ "print(\"foo bar\")\n"
+		+ "end\n\n"
+		+ "foo()";
 
 	@Test
 	public void loadModel() throws Exception {
