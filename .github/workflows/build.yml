@@ -1,0 +1,29 @@
+name: build-wf
+on: 
+  pull_request:
+  workflow_call:
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-24.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Enable Long Paths in Git
+        run: sudo git config --system core.longpaths true
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup JDK
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: 11
+          cache: 'maven'
+      - name: Build Packages
+        run: ./mvnw clean package
+      - name: Store P2 Repository
+        uses: actions/upload-artifact@v6
+        with:
+          name: p2-cipm-metamodels
+          path: metamodels.p2/target/repository
+          retention-days: 1
