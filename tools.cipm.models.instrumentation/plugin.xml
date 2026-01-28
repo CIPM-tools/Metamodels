@@ -3,9 +3,11 @@
 
 <plugin>
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated InstrumentationModel -->
       <package
             uri="http://www.dmodel.com/InstrumentationMetamodel"
-            class="cipm.consistency.base.models.instrumentation.InstrumentationModel.InstrumentationModelPackage"
-            genModel="model/InstrumentationModel.genmodel"/>
+            class="tools.cipm.models.instrumentation.InstrumentationModel.InstrumentationModelPackage"
+            genModel="src/main/resources/metamodel/InstrumentationModel.genmodel"/>
    </extension>
+
 </plugin>

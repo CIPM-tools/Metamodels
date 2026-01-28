@@ -8,7 +8,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceInstrumentationPoint" eSuperTypes="#//InstrumentationPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" lowerBound="1"
-        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//seff/ResourceDemandingSEFF"/>
+        eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//seff/ResourceDemandingSEFF"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="actionInstrumentationPoints"
         upperBound="-1" eType="#//ActionInstrumentationPoint" containment="true"/>
   </eClassifiers>
@@ -17,7 +17,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionInstrumentationPoint" eSuperTypes="#//InstrumentationPoint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
-        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//seff/AbstractAction"/>
+        eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//seff/AbstractAction"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//InstrumentationType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InstrumentationType">

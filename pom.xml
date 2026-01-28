@@ -13,14 +13,15 @@
 	<description>This package contains different metamodels for CIPM.</description>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputTimestamp>2025-01-01T00:00:00Z</project.build.outputTimestamp>
     </properties>
 
     <modules>
         <module>org.xtext.lua</module>
+		<module>tools.cipm.models.instrumentation</module>
     </modules>
     
     <build>

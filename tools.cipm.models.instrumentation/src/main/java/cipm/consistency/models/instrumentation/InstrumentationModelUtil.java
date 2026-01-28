@@ -15,11 +15,11 @@ import org.palladiosimulator.pcm.seff.LoopAction;
 import org.palladiosimulator.pcm.seff.ResourceDemandingBehaviour;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
 
-import cipm.consistency.base.models.instrumentation.InstrumentationModel.ActionInstrumentationPoint;
-import cipm.consistency.base.models.instrumentation.InstrumentationModel.InstrumentationModel;
-import cipm.consistency.base.models.instrumentation.InstrumentationModel.InstrumentationModelFactory;
-import cipm.consistency.base.models.instrumentation.InstrumentationModel.InstrumentationType;
-import cipm.consistency.base.models.instrumentation.InstrumentationModel.ServiceInstrumentationPoint;
+import tools.cipm.models.instrumentation.InstrumentationModel.ActionInstrumentationPoint;
+import tools.cipm.models.instrumentation.InstrumentationModel.InstrumentationModel;
+import tools.cipm.models.instrumentation.InstrumentationModel.InstrumentationModelFactory;
+import tools.cipm.models.instrumentation.InstrumentationModel.InstrumentationType;
+import tools.cipm.models.instrumentation.InstrumentationModel.ServiceInstrumentationPoint;
 
 public class InstrumentationModelUtil {
 
