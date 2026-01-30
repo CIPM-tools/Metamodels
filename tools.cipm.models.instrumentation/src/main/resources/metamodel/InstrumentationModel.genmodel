@@ -7,7 +7,7 @@
     importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="11.0"
     copyrightFields="false" editPluginID="cipm.consistency.InstrumentationModel" testsPluginID="cipm.consistency.InstrumentationModel"
     usedGenPackages="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier platform:/plugin/org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
-    operationReflection="true" importOrganizing="true">
+    importOrganizing="true">
   <foreignModel>InstrumentationModel.ecore</foreignModel>
   <genPackages prefix="InstrumentationModel" basePackage="tools.cipm.models.instrumentation"
       disposableProviderFactory="true" fileExtensions="imm" ecorePackage="InstrumentationModel.ecore#/">
