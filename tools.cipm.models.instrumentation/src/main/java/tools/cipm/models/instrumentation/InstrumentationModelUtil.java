@@ -1,4 +1,4 @@
-package cipm.consistency.models.instrumentation;
+package tools.cipm.models.instrumentation;
 
 import java.util.ArrayList;
 import java.util.List;
