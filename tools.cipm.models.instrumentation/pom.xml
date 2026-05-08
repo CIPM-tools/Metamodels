@@ -5,14 +5,14 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>tools.cipm.models.instrumentation</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
     <packaging>jar</packaging>
     <name>Instrumentation Metamodel</name>
 
     <parent>
         <groupId>tools.cipm</groupId>
         <artifactId>metamodels.parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
     
     <repositories>
@@ -24,6 +24,18 @@
     </repositories>
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>plugin.properties</include>
+                    <include>plugin.xml</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
 			<plugin>
                 <groupId>org.codehaus.mojo</groupId>

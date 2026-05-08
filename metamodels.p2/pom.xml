@@ -11,7 +11,7 @@
     <parent>
         <groupId>tools.cipm</groupId>
         <artifactId>metamodels.parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <build>
@@ -32,7 +32,7 @@
                                 <!-- specify your depencies here -->
                                 <!-- groupId:artifactId:version -->
                                 <artifact>
-                                    <id>tools.cipm:tools.cipm.models.instrumentation:1.0.0</id>
+                                    <id>tools.cipm:tools.cipm.models.instrumentation:1.0.1</id>
                                     <transitive>false</transitive>
                                 </artifact>
                                 <artifact>
@@ -56,7 +56,7 @@ All rights reserved. This program and the accompanying materials are made partly
                                     <generateSourceFeature>false</generateSourceFeature>
                                     <artifacts>
                                         <artifact>
-                                            <id>tools.cipm:tools.cipm.models.instrumentation:1.0.0</id>
+                                            <id>tools.cipm:tools.cipm.models.instrumentation:1.0.1</id>
                                             <transitive>false</transitive>
                                             <source>false</source>
                                         </artifact>
@@ -96,7 +96,7 @@ All rights reserved. This program and the accompanying materials are made partly
         <dependency>
             <groupId>tools.cipm</groupId>
             <artifactId>tools.cipm.models.instrumentation</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>tools.cipm</groupId>
